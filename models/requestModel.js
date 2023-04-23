@@ -1,46 +1,48 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const requestSchema = new mongoose.Schema({
   productType: {
     type: String,
-    required: true
+    required: true,
   },
   issueType: {
     type: [String],
-    required: true
+    required: true,
+  },
+  customerName: {
+    type: String,
+    required: true,
   },
   issueDescription: {
     type: String,
-    required: true
+    required: true,
   },
-  policyUpload: {
-    type: Buffer,
-    contentType:String,
-    required: true
-  },
+  // policyUpload: {
+  //   type: Buffer,
+  //   contentType:String,
+  // },
   invoiceNumber: {
     type: String,
-    required: true
+    required: true,
   },
   employeeName: {
     type: String,
-    default: ''
+    default: "",
   },
   currentState: {
     type: String,
-    enum: ['Pending', 'Assigned', 'Resolved'],
-    default: 'Pending'
+    enum: ["Pending", "Assigned", "Resolved"],
+    default: "Pending",
   },
   createdAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
-const Request = mongoose.model('requests', requestSchema);
+const Request = mongoose.model("requests", requestSchema);
 
 export default Request;
-
 
 // {
 //     "productType":"Mobile",

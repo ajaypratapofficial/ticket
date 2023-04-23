@@ -13,6 +13,7 @@ dotenv.config();
 
 // mobgodb connectivity after dotenv.config
 connectDB();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -32,7 +33,7 @@ app.use(express.static(path.join(__dirname, "./client/build")));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/request", requestRoutes);
 
-//rest api
+// rest api
 app.use("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });

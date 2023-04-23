@@ -7,7 +7,7 @@ export const requestController = async (req, res) => {
       productType,
       issueType,
       issueDescription,
-      policyUpload,
+      // policyUpload,
       invoiceNumber,
       customerName,
     } = req.body;
@@ -21,9 +21,9 @@ export const requestController = async (req, res) => {
     if (!issueDescription) {
       return res.status(401).send({ message: "Issue Description is required" });
     }
-    if (!policyUpload) {
-      return res.status(401).send({ message: "Policy Upload is required" });
-    }
+    // if (!policyUpload) {
+    //   return res.status(401).send({ message: "Policy Upload is required" });
+    // }
     if (!invoiceNumber) {
       return res.status(401).send({ message: "Invoice Number is required" });
     }
@@ -43,7 +43,7 @@ export const requestController = async (req, res) => {
       productType,
       issueType,
       issueDescription,
-      policyUpload,
+      // policyUpload,
       invoiceNumber,
       customerName,
     }).save();
